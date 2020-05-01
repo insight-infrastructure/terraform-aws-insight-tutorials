@@ -41,4 +41,34 @@ AWS profiles in the `~/.aws` directory.
 
 ### Lessons 
 
-**Main Points**
+To run any of these lessons, run the following 
+```bash
+terraform init
+terraform apply
+terraform deploy 
+```
+
+##### Lesson-1 Basic 
+
+- You can apply multiple times
+- An apply can destroy resources 
+- Diffs create new resources
+
+##### Lesson-2 SSH Keys 
+
+- Create new ssh keys -> `ssh-keygen -b 4096`
+- Reference those ssh keys in the variable 
+- No default in variable means you need to supply it
+- Notice now you can ssh into the box `ssh -i <path to your key> ubuntu@<public IP>`
+- Notice how you need to open security groups for the instance to become available 
+
+##### Lesson-3 User Data  
+
+- Simple progression where we now add user-data (a script that runs on startup)
+- User data script launches busy boxy webserver 
+- Try curling your endpoint now -> `curl <your ip>:8080`
+
+##### Lesson-4 Modules
+
+- This example now provides two different servers as before but now through modules 
+

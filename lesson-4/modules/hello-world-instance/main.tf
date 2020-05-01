@@ -1,3 +1,4 @@
+resource "random_pet" "this" {}
 
 resource "aws_eip" "this" {}
 
@@ -37,7 +38,7 @@ data "template_file" "user_data" {
 }
 
 resource "aws_security_group" "this" {
-  name = "lesson-3"
+  name = random_pet.this.id
   ingress {
     from_port = 22
     to_port   = 22

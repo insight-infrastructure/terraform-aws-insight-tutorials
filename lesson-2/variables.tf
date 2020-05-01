@@ -1,9 +1,7 @@
 variable "public_key_path" {
   description = "Path to public key"
   type = string
-  default = "/home/rob/.ssh/testing.pub"
+//  TODO: Make sure you know what happens when you give a avriable a default.
+//  default = "path to something"
 }
-
-
-
 
