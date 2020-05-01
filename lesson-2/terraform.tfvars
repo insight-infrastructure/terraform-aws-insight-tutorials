@@ -1,2 +1,2 @@
 // TODO: Replace this!
-public_key_path = "the path to your key"
+public_key_path = "/home/<yourusername>/.ssh/id_rsa.pub"

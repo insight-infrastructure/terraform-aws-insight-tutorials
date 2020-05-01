@@ -1,4 +1,12 @@
+provider "aws" {
+  region = "us-east-2"
+}
 
+
+// This is an elastic IP used to have a fixed IP that you can move around from instance to instance.
+// It is often used in conjunction with a DNS record or for external firewalls. If you destroy the IP, it is lost
+// forever so it is often useful to declare it outside of your instance and then pick it up as a data resource.
+// Check lesson 4 for more details on that
 resource "aws_eip" "this" {}
 
 resource "aws_eip_association" "this" {
@@ -58,8 +66,8 @@ resource "aws_instance" "this" {
   instance_type = "t3.micro"
 
   key_name = aws_key_pair.this.key_name
-  user_data = data.template_file.user_data.rendered
   vpc_security_group_ids = [aws_security_group.this.id]
+  user_data = data.template_file.user_data.rendered
 
   tags = {
     Name = "lesson-3"

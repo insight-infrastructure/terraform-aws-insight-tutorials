@@ -1,3 +1,13 @@
+variable "vpc_id" {
+  description = "The id of the vpc"
+  type = string
+}
+
+variable "subnet_id" {
+  description = "The id of the subnet to launch into"
+  type = string
+}
+
 variable "public_key_path" {
   description = "Path to public key"
   type = string

@@ -39,6 +39,8 @@ data "template_file" "user_data" {
 
 resource "aws_security_group" "this" {
   name = random_pet.this.id
+
+  vpc_id = var.vpc_id
   ingress {
     from_port = 22
     to_port   = 22
@@ -61,6 +63,7 @@ resource "aws_instance" "this" {
   key_name = aws_key_pair.this.key_name
   user_data = data.template_file.user_data.rendered
   vpc_security_group_ids = [aws_security_group.this.id]
+  subnet_id = var.subnet_id
 
   tags = {
     Name = "lesson-3"
