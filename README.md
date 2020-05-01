@@ -45,7 +45,7 @@ To run any of these lessons, run the following
 ```bash
 terraform init
 terraform apply
-terraform deploy 
+terraform destroy
 ```
 
 ##### Lesson-1 Basic 
