@@ -28,7 +28,7 @@ brew install terraform awscli
 ##### Ubuntu
 ```bash
 pip install awscli 
-wget https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip -O /tmp/terraform.zip 
+wget https://releases.hashicorp.com/terraform/0.12.23/terraform_0.12.23_linux_amd64.zip -O /tmp/terraform.zip 
 sudo unzip /tmp/terraform.zip -d /usr/local/bin/
 sudo chmod +x /usr/local/bin/terraform
 sudo apt-get install -y graphviz
