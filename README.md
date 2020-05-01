@@ -4,13 +4,17 @@ This demo is supposed to walk you through some of the basic parts of running ter
  the concepts are applicable to any cloud. This demo is split into lessons to demonstrate individual concepts. 
  
 1. The basics
-2. Getting a shell in an instance 
-3. Bootstrapping a machine with user-data 
-4. Using modules
-5. Expressions and functions - WIP
-6. How to use count and with logic - WIP 
-7. Keeping track of state - WIP
-8. Testing modules - WIP
+1. Getting a shell in an instance 
+1. Bootstrapping a machine with user-data 
+1. Using modules
+1. Expressions and functions - WIP
+1. How to use count with logic - WIP 
+1. Keeping track of state - WIP
+
+Advanced Lessons
+1. Terraform with Ansible - WIP
+1. Testing modules - WIP
+1. Using terragrunt - WIP 
 
 ### Installing prerequisites 
 
