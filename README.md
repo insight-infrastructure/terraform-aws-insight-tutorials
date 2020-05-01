@@ -1,4 +1,4 @@
-# Terraform AWS Demo
+# Terraform AWS Insight Tutorials 
 
 This demo is supposed to walk you through some of the basic parts of running terraform.  We will be working with AWS but
  the concepts are applicable to any cloud. This demo is split into lessons to demonstrate individual concepts. 
@@ -15,6 +15,8 @@ Advanced Lessons
 1. Terraform with Ansible - WIP
 1. Testing modules - WIP
 1. Using terragrunt - WIP 
+
+For further reading, checkout our [`notion` space](https://www.notion.so/insightx/terraform-4b79a86691664674a0dd946e0363725d) for more terraform information. 
 
 ### Installing prerequisites 
 
