@@ -1,5 +1,15 @@
 provider "aws" {
-  region = "us-east-2"
+  region = "us-east-1"
+}
+
+terraform {
+  backend "s3" {
+    bucket = "insight-tf-demos-terraform-state"
+    key    = "stuff/things/terraform.tfstate"
+    region = "us-east-1"
+    dynamodb_table = "insight-tf-demos-terraform-state-lock"
+
+  }
 }
 
 variable "public_key_path" {
@@ -41,7 +51,6 @@ output "stuff_ip" {
 output "hello_ip" {
   value = module.hello.public_ip
 }
-
 
 module "vpc2" {
   source = "terraform-aws-modules/vpc/aws"

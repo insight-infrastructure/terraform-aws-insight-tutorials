@@ -2,6 +2,10 @@ provider "aws" {
   region = "us-east-2"
 }
 
+data "aws_eip" "this" {
+  public_ip = var.public_ip
+}
+
 data "aws_ami" "ubuntu" {
   most_recent = true
 
@@ -28,10 +32,6 @@ variable "instance_type" {
 resource "aws_instance" "this" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
-
-  tags = {
-    Name = "lesson-1"
-  }
 }
 
 output "image_id" {

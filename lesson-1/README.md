@@ -2,13 +2,65 @@
 
 This lesson is intended to show the basic components of terraform. 
 
-There are five basic building blocks to writing terraform. 
+There are seven basic building blocks to writing terraform. 
 
-1. Providers - Bring in information about the API that terraform will map.  Informs available resources and order they should be deployed
-1. Resources - Things to de deployed 
-1. Data - Brings in data from outside, doesn't make any changes 
-1. Variables - Declares variables / interfaces 
-1. Outputs - Outputs attributes from anything (resources, data, variables etc.)
+- Providers - Bring in information about the API that terraform will map.  Informs available resources and order they should be deployed
+```hcl-terraform
+provider "aws" {
+  region = "us-east-2"
+}
+```
+
+- Variables - Declares variables / interfaces 
+```hcl-terraform
+variable "instance_type" {
+  description = "The instance type to run"
+  type = string
+  default = "t3.micro"
+}
+```
+
+- Resources - Things to de deployed 
+```hcl-terraform
+resource "aws_instance" "this" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = var.instance_type
+}
+```
+
+- Data - Brings in data from outside, doesn't make any changes 
+```hcl-terraform
+data "aws_eip" "this" {
+  public_ip = var.public_ip
+}
+```
+
+- Outputs - Outputs attributes from anything (resources, data, variables etc.)
+```hcl-terraform
+output "private_ip" {
+  value = aws_instance.this.private_ip
+}
+```
+
+- locals - Internal logic 
+```hcl-terraform
+locals  {
+  value = var.public_ip
+  value_2 = local.value
+}
+```
+
+- Modules - External groups of terraform components 
+```hcl-terraform
+module "best_bunch_of_tf_stuffs"  {
+  source = "{path.module}/path/to/tf/folder"
+}
+```
+
+We'll go over the top 5 blocks this lesson.  
+
+If you haven't noticed, terraform comes with it's own scripting language called [HCL](https://www.terraform.io/docs/configuration/syntax.html). 
+It is basically json when rendered but the exact structure is informed by the provider.
 
 Later lesson we will learn about `locals` and `modules`
 

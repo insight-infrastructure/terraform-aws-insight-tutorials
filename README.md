@@ -7,8 +7,8 @@ This demo is supposed to walk you through some of the basic parts of running ter
 1. Getting a shell in an instance 
 1. Bootstrapping a machine with user-data 
 1. Using modules
-1. Expressions and functions - WIP
-1. How to use count with logic - WIP 
+1. Expressions and locals 
+1. Functions and count 
 1. Keeping track of state - WIP
 
 Advanced Lessons
